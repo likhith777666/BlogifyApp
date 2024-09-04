@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('./partials/head') %>
+</head>
+<body>
+  <%- include('./partials/Nav') %>
+  <div class="container mt-4">
+    <form action="/add/blog" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+          <label for="covetImagURL" class="form-label">covetImag</label>
+          <input type="file" class="form-control" id="covetImagURL" aria-describedby="emailHelp" name="covetImagURL">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputEmail1" class="form-label">Title</label>
+            <input type="text" class="form-control" id="title" aria-describedby="emailHelp" name="title">
+          </div>
+        <div class="mb-3">
+            <label for="floatingTextarea">Body</label>
+            <textarea class="form-control"  id="floatingTextarea" name="body"></textarea>
+        </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+  </div>
+  
+
+  <%= locals.user %>
+      
+      <%- include('./partials/script') %>
+</body>
+</html>

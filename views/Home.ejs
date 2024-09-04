@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head') %>
+</head>
+<body>
+  <%- include('./partials/Nav') %>
+<div class="container mt-3">
+  <div class="row row-cols-3">
+    <% if (allBlog && allBlog.length > 0) { %>
+      <% allBlog.forEach(ele => { %>
+        <div class="cols">
+          <div class="card cols" style="width: 18rem;">
+            <img src="<%= ele.covetImagURL %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= ele.title %></h5>
+      
+              <a href="/view/<%= ele._id %>" class="btn btn-primary">view</a>
+            </div>
+          </div>
+        </div>
+      <% }); %>
+    <% } else { %>
+      <p>No blogs found.</p>
+    <% } %>
+  </div>
+</div>
+  
+  
+  <%- include('./partials/script') %>
+</body>
+</html>
