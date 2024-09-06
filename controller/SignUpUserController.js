@@ -2,7 +2,7 @@ const signupuser = require('../model/SignUpmodel');
 const blogModel = require("../model/blog");
 async function handleUserSignUpData(req, res) {
     const { Name, Email, Password } = req.body;
-
+     console.log(Name,Email,Password)
     if (!Name || !Email || !Password) {
         return res.status(400).json({ msg: "Please enter all required fields" });
     }

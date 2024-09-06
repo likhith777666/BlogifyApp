@@ -29,8 +29,8 @@ app.use(express.static(path.resolve("./public")));
 // Routes
 app.use("/home", authCheck, Staticrouter);
 app.use("/Static", Staticrouter);
-app.use("/createaccount",authCheck, router);
-app.use("/",authCheck, router);
+app.use("/createaccount", router);
+app.use("/", router);
 app.use("/add", authCheck, Blogrouter);
 app.use("/view", authCheck, Blogrouter);
 app.use("/view", authCheck, Blogrouter);
@@ -66,4 +66,5 @@ connectToTheDb(process.env.MONGO_URL)
 // Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
+    
 });
