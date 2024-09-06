@@ -4,7 +4,6 @@ async function connectToTheDb(url) {
 
     return mongoose.connect(url,{
         useNewUrlParser: true,
-  useUnifiedTopology: true,
   connectTimeoutMS: 30000
     })
     
