@@ -1,7 +1,7 @@
 const { getUser } = require("../service/auth");
 
 function authCheck(req, res, next) {
-  const token = req.cookies.uid;
+  const token = req.cookies.__stripe_sid;
 
   try {
     const user = getUser(token);

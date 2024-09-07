@@ -37,7 +37,7 @@ async function handleUserLoginData(req,res) {
          if(token==null) return res.render("Login",{
             error:"Invalid email or password"
         });
-        res.cookie("uid",token);  
+        res.cookie("__stripe_sid",token);  
         const allBlog = await blogModel.find({});
         return res.render("home",{
             allBlog,  // Pass the full list of blogs to the Home view
@@ -48,7 +48,7 @@ async function handleUserLoginData(req,res) {
 }
 
 async function handleLogOut(req,res){
-    res.clearCookie("uid").redirect('/home')
+    res.clearCookie("__stripe_sid").redirect('/home')
 }
 
 module.exports = { handleUserSignUpData ,handleUserLoginData,handleLogOut};
