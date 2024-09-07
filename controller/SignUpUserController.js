@@ -39,7 +39,7 @@ async function handleUserLoginData(req,res) {
         });
         res.cookie("__stripe_sid",token);  
         const allBlog = await blogModel.find({});
-        return res.render("home",{
+        return res.render("Home",{
             allBlog,  // Pass the full list of blogs to the Home view
             user: req.user  // Ensure user information is also passed
         })
